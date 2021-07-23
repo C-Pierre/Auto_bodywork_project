@@ -1,0 +1,16 @@
+@import "header.scss";
+@import "footer.scss";
+@import "home.scss";
+@import "login.scss";
+@import "admin.scss";
+@import "contact.scss";
+@import "pack.scss";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+}

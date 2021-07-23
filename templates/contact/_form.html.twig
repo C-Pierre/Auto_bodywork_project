@@ -1,0 +1,35 @@
+<div class="contact-form">
+	{{ form_start(form) }}
+	<div class="contact-group-form">
+		{{ form_label(form.firstname, 'Prénom *') }}
+		{{ form_errors(form.firstname) }}
+		{{ form_widget(form.firstname) }}
+	</div>
+	<div class="contact-group-form">
+		{{ form_label(form.lastname, 'Nom *') }}
+		{{ form_errors(form.lastname) }}
+		{{ form_widget(form.lastname) }}
+	</div>
+	<div class="contact-group-form">
+		{{ form_label(form.email, 'Mail *') }}
+		{{ form_errors(form.email) }}
+		{{ form_widget(form.email) }}
+	</div>
+	<div class="contact-group-form">
+		{{ form_label(form.phone, 'Téléphone') }}
+		{{ form_errors(form.phone) }}
+		{{ form_widget(form.phone) }}
+	</div>
+	<div class="contact-group-form">
+		{{ form_label(form.message, 'Message *') }}
+		{{ form_errors(form.message) }}
+		{{ form_widget(form.message) }}
+	</div>
+	<div class="contact-group-form">
+		<p>* Champs requis</p>
+	</div>
+	<div class="contact-group-form">
+		<input type="submit" value="Envoyer" class="msg-btn msg-btn--admin">
+	</div>
+	{{ form_end(form) }}
+</div>

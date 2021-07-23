@@ -1,0 +1,157 @@
+.login-main.login-main--admin {
+
+    nav {
+        position: fixed;
+        top: 100px;
+        left: 0;
+        height: auto;
+        width: 200px;
+        text-align: center;
+        background-color: #234187;
+        border-radius: 0 .2rem .2rem 0;
+
+        h1 {
+            padding: 1rem 0;
+            color: white;
+        }
+        
+        ul {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            height: auto;
+            border-top: 1px solid white;
+        }
+
+        li {
+            padding: 1rem 0;
+        }
+    }
+}
+
+.section-admin {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 90%;
+    height: 90%;
+}
+
+.container-admin {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 90%;
+    width: 85%;
+    background-color: white;
+    border-radius: .2rem;
+
+    h2 {
+        width: 100%;
+        padding: .5rem 0;
+        text-align: center;
+        border-bottom: 1px solid #234187;
+    }
+}
+
+.messages-admin {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 95%;
+    width: 100%;
+}
+
+.show-msg-admin {
+    display: inline-flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+    border-bottom: 1px solid #234187;
+}
+
+.msg-btn {
+    width:fit-content;
+    padding: .6rem 2rem;
+    font-size: 1rem;
+    color: white;
+    background-color: #234187;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 2px 4px 8px rgba($color: #000000, $alpha: .2);
+    transition: transform .3s ease;
+    cursor: pointer;
+}
+
+.msg-btn:hover {
+    box-shadow: 2px 4px 8px rgba($color: #000000, $alpha: .3);
+}
+
+.one-msg-admin {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 95%;
+    height: 90%;
+    margin: auto;
+
+    a {
+        margin-top: 2rem;
+    }
+}
+
+.top-msg-admin, .body-msg-admin, .text-msg-admin {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.body-msg-admin {
+    border: 1px solid black;
+    padding: 1rem;
+}
+
+.top-msg-admin {
+    height: 100px;
+}
+
+.text-msg-admin {
+    padding: 1rem 0;
+
+    p {
+        padding: .4rem 0;
+    }
+}
+
+.index-pro {
+    
+}
+
+.password-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.pagination-container {
+    position: absolute;
+
+}
+
+.pagination {
+    display: inline-flex !important;
+    width: 150px !important;
+    background-color: red;
+
+    ul {
+
+    }
+
+    li {
+        background-color: green;
+    }
+}

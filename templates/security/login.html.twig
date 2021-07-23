@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	{% include '_headerAll.html.twig' 	%}
+	<main class="login-main">
+		<section class="login-section">
+			<div>
+				<div class="login-folder"></div>
+				<h1>Espace administrateur</h1>
+				<form class="login-form" method="POST">
+					{% if error %}
+						<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+					{% endif %}
+					<label for="inputUsername" class="login-label">Login :</label>
+					<input type="text" value="{{ last_username }}" name="username" id="inputUsername" class="login-input" autocomplete="username" required autofocus>
+					<label for="inputPassword" class="login-label">Mot de passe :</label>
+					<input type="password" name="password" id="inputPassword" class="login-input" autocomplete="current-password" required>
+					<input type="submit" class="login-submit" value="Se connecter">
+					<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+				</form>
+			</div>
+		</section>
+	</main>
+	<footer class="footer-login">
+		<div class="footer-all footer-all--login">
+			<h3>Dupont Carrosserie</h3>
+		</div>
+	</footer>
+{% endblock %}

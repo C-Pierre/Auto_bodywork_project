@@ -1,0 +1,19 @@
+{% extends 'layoutAll.html.twig' %}
+
+{% block main %}
+	<div class="body-pack">
+		<div class="container-pack">
+			{% for pack in packs %}
+				<div class="card-pack">
+					<div class="card-pack-top">
+						<p>{{ pack.name }}</p>
+					</div>
+					<div class="card-pack-body">
+						<p>{{ pack.description }}</p>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+		{# <a href="{{ path('pack_new') }}">Create new</a> #}
+	</div>
+{% endblock %}

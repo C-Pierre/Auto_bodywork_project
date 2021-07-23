@@ -1,0 +1,55 @@
+<header class="header" id="header">
+	<div class="menu">
+		<a href="/" class="title-bando" id="bandoTitle">Dupont carrosserie</a>
+		<nav class="nav-off" id="nav">
+			<ul>
+				<li><a href="/">Accueil</a></li>
+				<li><a href="/service">Services</a></li>
+				<li><a href="/pack">Forfaits</a></li>
+				<li><a href="/contact">Contact</a></li>
+			</ul>
+		</nav>
+	</div>
+	<p class="date-bando" id="dateBando">Depuis
+		<span>2018</span>
+	</p>
+</header>
+<div class="home-button"><a href="#" class="button" id="button"><img src="{{ asset('build/images/icones/down.svg') }}" alt=""></a></div>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+
+        const button = document.getElementById('button');
+        const buttonTitle = document.getElementById('buttonTitle');
+        const header = document.getElementById('header');
+        const dateBando = document.getElementById('dateBando');
+        const nav = document.getElementById('nav');
+        const overlay = document.querySelector('.overlay');
+
+        function onOffMenu() {
+            header.classList.add('header-off');
+            dateBando.classList.add('date-bando-off');
+            button.classList.add('button-active');
+            
+            setTimeout(colorHeader, 700); 
+            
+            function colorHeader() {
+                button.classList.add('button-off');
+                if (header.style.height = '70px') {
+                    header.classList.add('header-on');
+                    nav.classList.remove('nav-off');
+                    overlay.classList.add('overlay-on');
+
+                    setTimeout(overlayOff, 100); 
+
+                    function overlayOff() {
+                        overlay.classList.add('overlay-off');
+                    }
+                } 
+            }
+        }
+
+        button.addEventListener('click', onOffMenu);
+        buttonTitle.addEventListener('click', onOffMenu);
+
+    })
+</script>

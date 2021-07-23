@@ -1,0 +1,28 @@
+{% extends '/admin/layout.html.twig' %}
+
+{% block main %}
+	<div class="body-pack body-pack--admin">
+		<div class="container-pack container-pack--admin">
+			{% for pack in packs %}
+				<div class="card-pack">
+					<div class="card-pack-top">
+						<p>{{ pack.name }}</p>
+					</div>
+					<div class="card-pack-body card-pack-body--admin">
+						<p>{{ pack.description }}</p>
+						<a href="{{ path('pack_delete', {'id': pack.id}) }}" class="msg-btn">Supprimer</a>
+						<a href="{{ path('pack_edit', {'id': pack.id}) }}" class="msg-btn">Modifier</a>
+					</div>
+				</div>
+			{% endfor %}
+			<div class="card-pack">
+				<div class="card-pack-top">
+					<p>Créer des forfaits</p>
+				</div>
+				<div class="card-pack-body card-pack-body--admin">
+					<a href="{{ path('pack_new') }}" class="msg-btn">Nouveau</a>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

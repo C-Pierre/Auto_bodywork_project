@@ -1,0 +1,12 @@
+<div class="contact-user-form">
+	{{ form_start(form) }}
+	<div class="contact-group-form">
+		{{ form_label(form.message) }}
+		{{ form_errors(form.message) }}
+		{{ form_widget(form.message, {'attr': {'class': 'textarea-contact'}}) }}
+	</div>
+	<div class="contact-group-form">
+		<input type="submit" value="Envoyer" class="msg-btn msg-btn--admin">
+	</div>
+	{{ form_end(form) }}
+</div>

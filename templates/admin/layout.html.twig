@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	{% include '_headerAll.html.twig' 	%}
+	<main class="login-main login-main--admin">
+		<nav>
+			<h1>Espace administrateur</h1>
+			<ul>
+				<li>
+					<a href="{{ path('admin_message_reception') }}">Messages</a>
+				</li>
+				<li>
+					<a href="{{ path('admin_message_archived') }}">Archivés</a>
+				</li>
+				<li>
+					<a href="#">Envoie</a>
+				</li>
+			</ul>
+			<ul>
+				<li><a href="{{ path('admin_pack_all') }}">Forfaits</a></li>
+				<li><a href="{{ path('admin_service') }}">Services</a></li>
+			</ul>
+			<ul>
+				<li><a href="{{ path('admin_password') }}">Mot de passe</a></li>
+				<li><a href="{{ path('app_logout') }}">Déconnexion</a></li>
+			</ul>
+		</nav>
+		<section class="section-admin">
+			<div class="container-admin">
+				{% block main %}
+				{% endblock %}
+			</div>
+		</section>
+	</main>
+	<footer class="footer-login">
+		<div class="footer-all footer-all--login">
+			<h3>Dupont Carrosserie</h3>
+		</div>
+	</footer>
+{% endblock %}

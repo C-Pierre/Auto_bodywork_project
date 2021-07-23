@@ -1,0 +1,65 @@
+.body-pack {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    width: 100%;
+    height: 100%;
+    background-color: lightgray;
+}
+
+.container-pack {
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 300px;
+    width: 80%;
+    height: auto;
+    margin: 6rem 0;
+}
+
+.card-pack {
+    width:100%;
+    height: 100%;
+    border-radius: 0.2rem;
+    padding: 2rem 0;
+}
+
+.card-pack-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 25%;
+    width: 100%;
+    background-color: #234187;
+
+    p {
+        color:white
+    }
+}
+
+.card-pack-body {
+    display: flex;
+    align-items: center;
+    height: 75%;
+    width: 100%;
+    background-color: white;
+    text-align: center;
+}
+
+.body-pack.body-pack--admin {
+    height: 100%;
+}
+
+.container-pack.container-pack--admin {
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 350px;
+}
+
+
+.card-pack-body.card-pack-body--admin {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+}

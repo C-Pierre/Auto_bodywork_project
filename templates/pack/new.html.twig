@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Pack{% endblock %}
+
+{% block body %}
+    <h1>Create new Pack</h1>
+
+    {{ include('pack/_form.html.twig') }}
+
+    <a href="{{ path('admin_pack_all') }}">back to list</a>
+{% endblock %}

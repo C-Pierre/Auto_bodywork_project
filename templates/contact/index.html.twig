@@ -1,0 +1,29 @@
+{% extends 'layoutAll.html.twig' %}
+
+{% block main %}
+	<main class="login-main login-main--contact">
+		{% include '/contact/_form.html.twig' %}
+		<div class="contact-container">
+			<h1>Contactez-nous</h1>
+			<div class="contact-infos">
+				<div>
+					<img src="{{ asset('build/images/icones/home.svg') }}" alt="">
+					<p>18 boulevard Guillet Maillet 17100 Saintes</p>
+				</div>
+				<div>
+					<img src="{{ asset('build/images/icones/mail.svg') }}" alt="">
+					<p>0606060606</p>
+				</div>
+				<div>
+					<img src="{{ asset('build/images/icones/mail.svg') }}" alt="">
+					<p>dupontcarrosserie@monsite.com</p>
+				</div>
+				<div>
+					<img src="{{ asset('build/images/icones/clock.svg') }}" alt="">
+					<p>Du lundi au vendredi de 08h à 17h</p>
+				</div>
+			</div>
+			<a href="#" class="msg-btn">Nous localiser</a>
+		</div>
+	</main>
+{% endblock %}

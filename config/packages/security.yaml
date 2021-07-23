@@ -1,16 +1,48 @@
 security:
     # https://symfony.com/doc/current/security/experimental_authenticators.html
     enable_authenticator_manager: true
+    password_hashers:
+        App\Entity\User:
+            algorithm: auto
+    access_control:
+        # allow unauthenticated users to access the login form
+        - { path: ^/login, roles: PUBLIC_ACCESS }
+        - { path: /admin, roles: [ ROLE_ADMIN, ROLE_SUPER_ADMIN ] }
+        - { path: /pack/edit, roles: [ ROLE_ADMIN, ROLE_SUPER_ADMIN ] }
+        - { path: /pack/delete, roles: [ ROLE_ADMIN, ROLE_SUPER_ADMIN ] }
+        - { path: /pack/create, roles: [ ROLE_ADMIN, ROLE_SUPER_ADMIN ] }
+        - { path: /service/edit, roles: [ ROLE_ADMIN, ROLE_SUPER_ADMIN ] }
+        - { path: /service/delete, roles: [ ROLE_ADMIN, ROLE_SUPER_ADMIN ] }
+        - { path: /service/create, roles: [ ROLE_ADMIN, ROLE_SUPER_ADMIN ] }
+
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
     providers:
-        users_in_memory: { memory: null }
+        # used to reload user from session & other features (e.g. switch_user)
+        app_user_provider:
+            entity:
+                class: App\Entity\User
+                property: username
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
         main:
             lazy: true
-            provider: users_in_memory
+            provider: app_user_provider
+            custom_authenticator: App\Security\LoginFormAuthentificatorAuthenticator
+            # allow authentication using a form or HTTP basic
+            form_login: ~
+            http_basic: ~
+
+            # configure the form authentication as the entry point for unauthenticated users
+            entry_point: form_login
+            guard:
+                authenticators:
+                    - App\Security\LoginFormAuthentificatorAuthenticator
+            logout:
+                path: app_logout
+                # where to redirect after logout
+                # target: app_any_route
 
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#firewalls-authentication
@@ -20,6 +52,4 @@ security:
 
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
-    access_control:
-        # - { path: ^/admin, roles: ROLE_ADMIN }
-        # - { path: ^/profile, roles: ROLE_USER }
+

@@ -1,0 +1,56 @@
+{% extends 'layout.html.twig' %}
+
+{% block main %}
+	<main>
+	<div class="overlay"></div>
+		<div class="home-bg"></div>
+		<section class="home"></section>
+	</main>
+	<section class="section-home">
+		<div class="container">
+			<img src="{{ asset('build/images/photos/garage9.jpg') }}" alt="">
+		</div>
+		<div class="container">
+			<div class="card">
+				<div class="card-top">
+					<a href="#">Forfaits</a>
+				</div>
+				<div class="card-body">
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit optio ipsa quas.</p>
+					<p>Lorem ipsum dolor</p>
+					<p>Lorem ipsum dolor</p>
+				</div>
+				<div class="btn-card">
+					<a href="/service">En savoir plus</a>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="card">
+				<div class="card-top">
+					<a href="#">Forfaits</a>
+				</div>
+				<div class="card-body">
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit optio ipsa quas.</p>
+					<p>Lorem ipsum dolor</p>
+					<p>Lorem ipsum dolor</p>
+				</div>
+				<div class="btn-card">
+					<a href="/pack">En savoir plus</a>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<img src="{{ asset('build/images/photos/garage.jpg') }}" alt="">
+		</div>
+	</section>
+	<section class="section-home-second">
+		<div class="home-container">
+			<div class="home-part">
+				<h2>Quelques informations</h2>
+				<div class="home-hours"></div>
+			</div>
+			<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11136.676076947211!2d-0.6269047!3d45.7477574!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb4798fc0261f3260!2sP%C3%B4le%20Innovation%20de%20Saintes!5e0!3m2!1sfr!2sfr!4v1626903655594!5m2!1sfr!2sfr" allowfullscreen="" loading="lazy"></iframe>
+		</div>
+	</section>
+</section>{% endblock %}
