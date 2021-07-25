@@ -10,11 +10,11 @@
 					</div>
 					<div class="card-pack-body card-pack-body--admin">
 						<p>{{ service.description }}</p>
-						<form method="post" action="{{ path('service_delete', {'id': service.id}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
+						<form method="post" action="{{ path('admin_service_delete', {'id': service.id}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
 							<input type="hidden" name="_token" value="{{ csrf_token('delete' ~ service.id) }}">
 							<button class="msg-btn">Supprimer</button>
 						</form>
-						<a href="{{ path('service_edit', {'id': service.id}) }}" class="msg-btn">Modifier</a>
+						<a href="{{ path('admin_service_edit', {'id': service.id}) }}" class="msg-btn">Modifier</a>
 					</div>
 				</div>
 			{% endfor %}
@@ -23,7 +23,7 @@
 					<p>Créer des prestations</p>
 				</div>
 				<div class="card-pack-body card-pack-body--admin">
-					<a href="{{ path('service_new') }}" class="msg-btn">Nouveau</a>
+					<a href="{{ path('admin_service_new') }}" class="msg-btn">Nouveau</a>
 				</div>
 			</div>
 		</div>

@@ -14,15 +14,15 @@ footer {
     .footer-title {
         padding: 1rem 3rem;
         font-size: 1.4rem;
-        color: white;
-        background-color: #234187;
+        color: $fourth-color;
+        background-color: $first-color;
         clip-path: polygon(0 7%, 100% 0, 100% 92%, 0 100%);
     }
     
     div {
         width: 90%;
         height: 1px;
-        background-color: #234187; 
+        background-color: $first-color; 
         transform: rotate(1deg);       
     }
 }
@@ -45,7 +45,7 @@ footer {
     }
 
     a:hover {
-        background-color: #234187;
+        background-color: $first-color;
     }
     
 }
@@ -54,5 +54,22 @@ footer {
 
 .footer-login {
     height: 100px;
+}
+
+@media screen and (max-width: 768px) {
+    .footer-all {
+        width: 90%;
+    }
+
+    .footer-list {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+    .footer-list {
+        display:none;
+    }
 }
 

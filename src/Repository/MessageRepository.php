@@ -26,6 +26,7 @@ class MessageRepository extends ServiceEntityRepository
     public function findAllToRead()
     {
         return $this->createQueryBuilder('m')
+            ->where('m.send = false')
             ->andWhere('m.archived = false')
             ->orderBy('m.id', 'DESC')
             ->getQuery()
@@ -39,8 +40,22 @@ class MessageRepository extends ServiceEntityRepository
     public function findAllArchived()
     {
         return $this->createQueryBuilder('m')
+            ->where('m.send = false')
             ->andWhere('m.archived = true')
-            ->orderBy('m.id', 'DESC')
+            ->orderBy('m.id', 'ASC')
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
+    // /**
+    //  * @return Message[] Returns an array of Message objects
+    //  */
+    public function findAllSend()
+    {
+        return $this->createQueryBuilder('m')
+            ->where('m.send = true')
+            ->orderBy('m.id', 'ASC')
             ->getQuery()
             ->getResult()
         ;
@@ -55,34 +70,4 @@ class MessageRepository extends ServiceEntityRepository
         ->orderBy('m.id', 'DESC')
     ;
     }
-
-
-    // /**
-    //  * @return Message[] Returns an array of Message objects
-    //  */
-    /*
-    public function findByExampleField($value)
-    {
-        return $this->createQueryBuilder('m')
-            ->andWhere('m.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('m.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
-    }
-    */
-
-    /*
-    public function findOneBySomeField($value): ?Message
-    {
-        return $this->createQueryBuilder('m')
-            ->andWhere('m.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
-    }
-    */
 }

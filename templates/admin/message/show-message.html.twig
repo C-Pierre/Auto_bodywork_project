@@ -1,41 +1,40 @@
 {% extends '/admin/layout.html.twig' %}
 
 {% block main %}
-	<h2>Boîte de réception</h2>
-	<div class="messages-admin">
-		{% if message %}
-			<div class="show-msg-admin">
-				<p>Date : 06/06/2049</p>
-				<p>Contact :
-					{{ message.email }}</p>
-				{% if message.archived == false %}
-					<form method="post" action="{{ path('admin_message_select_archived', {'id': message.id}) }}" onsubmit="return confirm('Are you sure you want to archived this item?');">
-						<input type="hidden" name="archived" value="1">
-						<button class="msg-btn">Archiver</button>
-					</form>
-				{% endif %}
-				<form method="post" action="{{ path('admin_message_delete', {'id': message.id}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
-					<input type="hidden" name="_token" value="{{ csrf_token('delete' ~ message.id) }}">
-					<button class="msg-btn">Supprimer</button>
-				</form>
-			</div>
-			<div class="one-msg-admin">
-				<div class="top-msg-admin">
-					<p>Nom :
-						{{ message.firstname }}</p>
-					<p>Prénom :
-						{{ message.lastname }}</p>
-					<p>Phone :
-						{{ message.phone }}</p>
+	<div class="container-admin">
+		<h2>Boîte de réception</h2>
+		<div class="messages-admin">
+			{% if message %}
+				<div class="show-msg-admin">
+					<p>Date : 06/06/2049</p>
+					<p>Contact :
+						{{ message.email }}</p>
+					{% if message.archived == false %}
+						<form method="post" action="{{ path('admin_message_select_archived', {'id': message.id}) }}" onsubmit="return confirm('Are you sure you want to archived this item?');">
+							<input type="hidden" name="archived" value="1">
+							<button class="msg-btn">Archiver</button>
+						</form>
+					{% endif %}
+					{{ include('message/_form-delete.html.twig') }}
 				</div>
-				<div class="body-msg-admin">
-					<div class="text-msg-admin">
-						<p>Message :</p>
-						<p>{{ message.message }}</p>
+				<div class="one-msg-admin">
+					<div class="top-msg-admin">
+						<p>Nom :
+							{{ message.firstname }}</p>
+						<p>Prénom :
+							{{ message.lastname }}</p>
+						<p>Phone :
+							{{ message.phone }}</p>
 					</div>
+					<div class="body-msg-admin">
+						<div class="text-msg-admin">
+							<p>Message :</p>
+							<p>{{ message.message }}</p>
+						</div>
+					</div>
+					<a href="{{ path('admin_message_answer', {'id': message.id}) }}" class="msg-btn">Répondre</a>
 				</div>
-				<a href="{{ path('admin_message_answer', {'id': message.id}) }}" class="msg-btn">Répondre</a>
-			</div>
-		{% endif %}
+			{% endif %}
+		</div>
 	</div>
 {% endblock %}

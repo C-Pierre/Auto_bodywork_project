@@ -1,11 +1,8 @@
-{% extends 'base.html.twig' %}
+{% extends 'layoutAll.html.twig' %}
 
-{% block title %}New Pack{% endblock %}
-
-{% block body %}
-    <h1>Create new Pack</h1>
-
-    {{ include('pack/_form.html.twig') }}
-
-    <a href="{{ path('admin_pack_all') }}">back to list</a>
+{% block main %}
+	<main class="login-main login-main--contact">
+		{% include 'pack/_form.html.twig' %}
+		<a href="{{ path('admin_pack') }}" class="msg-btn">back to list</a>
+	</main>
 {% endblock %}

@@ -1,5 +1,5 @@
-<div class="contact-form">
-	{{ form_start(form) }}
+
+	{{ form_start(form, {'attr': {'class': 'contact-form'}}) }}
 	<div class="contact-group-form">
 		{{ form_label(form.firstname, 'Prénom *') }}
 		{{ form_errors(form.firstname) }}
@@ -23,7 +23,7 @@
 	<div class="contact-group-form">
 		{{ form_label(form.message, 'Message *') }}
 		{{ form_errors(form.message) }}
-		{{ form_widget(form.message) }}
+		{{ form_widget(form.message, {'attr': {'class': 'textarea-contact'}}) }}
 	</div>
 	<div class="contact-group-form">
 		<p>* Champs requis</p>
@@ -32,4 +32,4 @@
 		<input type="submit" value="Envoyer" class="msg-btn msg-btn--admin">
 	</div>
 	{{ form_end(form) }}
-</div>
+

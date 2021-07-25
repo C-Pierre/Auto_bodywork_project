@@ -3,12 +3,12 @@
     position: fixed;
     top: 0;
     left: 0;
-    height:100%;
+    height: 100%;
     width: 100%;
-    background-color: lightgray;
+    background-color: $third-color;
     z-index: 8;
     opacity: 1;
-    transition: opacity .3s ease;
+    transition: opacity 0.3s ease;
 }
 
 .overlay-on {
@@ -18,7 +18,6 @@
 .overlay-off {
     display: none;
 }
-
 
 .main-body {
     overflow-y: auto;
@@ -43,7 +42,7 @@ main {
 
 .home {
     height: 300px;
-    background-color: lightgray;
+    background-color: $third-color;
 }
 
 .section-home {
@@ -67,10 +66,10 @@ main {
 
 .card {
     position: relative;
-    width: 40%;
+    width: 50%;
     height: 225px;
     border-radius: 0.2rem;
-    background-color: #234187;
+    background-color: $first-color;
     text-align: center;
 
     .card-top {
@@ -80,7 +79,7 @@ main {
 
         a {
             font-size: 1.4rem;
-            color: white;
+            color: $fourth-color;
         }
     }
 
@@ -93,7 +92,7 @@ main {
         padding: 0.4rem;
 
         p {
-            color: black;
+            color: $fourth-color;
             margin: auto;
         }
     }
@@ -108,12 +107,27 @@ main {
         height: 3.5rem;
         width: 11rem;
         border-radius: 45px;
-        background-color: #061e5a;
+        background-color: $second-color;
+        box-shadow: 1px 2px 4px rgba($color: #000000, $alpha: 0.2);
+        transition: transform 0.3s ease;
 
         a {
             font-size: 1.1rem;
-            color: white;
+            color: $fourth-color;
         }
+
+        a::after {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            content: "";
+        }
+    }
+
+    .btn-card:hover {
+        transform: scale(1.05);
     }
 }
 
@@ -121,8 +135,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 500px;
-    background-color: lightgray;
+    background-color: $third-color;
 }
 
 .home-container {
@@ -131,9 +144,10 @@ main {
     align-items: center;
     width: 85%;
     height: 100%;
+    margin: 2rem 0;
 
     iframe {
-        width: 450px;
+        width: 40%;
         height: 300px;
         border: none;
         border-radius: 0.2rem;
@@ -146,12 +160,103 @@ main {
     flex-direction: column;
     justify-content: space-around;
     height: 90%;
+    width: 45%;
+
+    h2 {
+        margin: 1rem 0;
+    }
 }
 
-.home-hours {
-    width: 450px;
-    height: 200px;
-    border: 1px solid black;
+.business-hours {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 350px;
+    margin: auto;
+    background-color: $first-color;
+    border-radius: 0.2rem;
 }
 
+.business-hours .title {
+    font-size: 22px;
+    color: $fourth-color;
+    border-left: 5px solid #ffac0c;
+    padding: 1rem;
+}
 
+.opening-hours {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+}
+
+.business-hours li {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    color: $fourth-color;
+    line-height: 30px;
+    border-bottom: 1px solid $fourth-color;
+}
+
+.business-hours li:last-child {
+    border-bottom: none;
+}
+
+.business-hours .opening-hours li.today {
+    color: #ffac0c;
+}
+
+@media screen and (max-width: 992px) {
+    .card {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .section-home {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-auto-rows: 325px;
+        width: 100%;
+
+        .card {
+            width: 60%;
+        }
+
+        .container:nth-child(1) {
+            grid-row: 2;
+        }
+        .container:nth-child(2) {
+            grid-row: 1;
+        }
+    }
+
+    .home-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    .home-part {
+        width: 80%;
+    }
+
+    .home-container iframe{
+        width: 80%;
+        margin: 2rem 0;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .card {
+        width: 80%;
+    }
+
+    .home-part, .home-container iframe{
+        width: 100%;
+    }
+}

@@ -1,8 +1,9 @@
 .login-main {
     display: flex;
     justify-content: center;
-    height: 650px;
-    background-color: lightgray;
+    min-height: 650px;
+    width: 100%;
+    background-color: $third-color;
 }
 
 .login-section {
@@ -20,19 +21,19 @@
         align-items: center;
         position: relative;
         width: 45%;
-        height: 60%;
+        height: 350px;
         margin: auto;
-        border: 2px solid #234187;
-        background-color: lightgray;
+        border: 2px solid $first-color;
+        background-color: $third-color;
     }
 
     .login-folder {
         position: absolute;
-        top: -1.2rem;
-        left: -0.15rem;
+        top: -1rem;
+        left: -.15rem;
         height: 1rem;
         width: 3rem;
-        background-color: #234187;
+        background-color: $first-color;
     }
 }
 
@@ -52,6 +53,7 @@
 .login-input {
     width: 17rem;
     height: 2.5rem;
+    padding-left: .5rem;
     border: none;
     border-radius: 45px;
     box-shadow: 2px 4px 8px rgba($color: #000000, $alpha: 0.2);
@@ -63,14 +65,24 @@
     border: none;
     border-radius: 45px;
     font-size: 1.2rem;
-    color: white;
-    background-color: #234187;
+    color: $fourth-color;
+    background-color: $first-color;
     box-shadow: 2px 4px 8px rgba($color: #000000, $alpha: 0.2);
     transition: color 0.3s ease, background-color 0.3s ease;
     cursor: pointer;
 }
 
 .login-submit:hover {
-    color: #234187;
-    background-color: white;
+    color: $first-color;
+    background-color: $fourth-color;
+}
+
+@media screen and (max-width: 768px) {
+    .login-section {
+
+
+        div {
+            width: 90%;
+        }
+    }
 }

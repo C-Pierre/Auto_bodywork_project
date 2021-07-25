@@ -2,6 +2,7 @@
 
 {% block main %}
 	<div class="body-pack">
+		<h1>Nos forfaits</h1>
 		<div class="container-pack">
 			{% for pack in packs %}
 				<div class="card-pack">
@@ -14,6 +15,5 @@
 				</div>
 			{% endfor %}
 		</div>
-		{# <a href="{{ path('pack_new') }}">Create new</a> #}
 	</div>
 {% endblock %}

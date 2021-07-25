@@ -1,13 +1,8 @@
-{% extends 'base.html.twig' %}
+{% extends 'layoutAll.html.twig' %}
 
-{% block title %}Edit Service{% endblock %}
-
-{% block body %}
-    <h1>Edit Service</h1>
-
-    {{ include('service/_form.html.twig', {'button_label': 'Update'}) }}
-
-    <a href="{{ path('admin_service') }}">back to list</a>
-
-    {{ include('service/_delete_form.html.twig') }}
+{% block main %}
+	<main class="login-main login-main--contact">
+		{% include '/service/_form.html.twig' %}
+		<a href="{{ path('admin_pack') }}" class="msg-btn">back to list</a>
+	</main>
 {% endblock %}

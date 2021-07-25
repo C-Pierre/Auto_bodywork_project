@@ -5,7 +5,7 @@
        type="text/css"
        id="current-color-scheme">
       .ColorScheme-Text {
-        color:#e53f5e;
+        color:white;
       }
       </style>
   </defs>

@@ -1,27 +1,34 @@
 .body-pack {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items:center;
     width: 100%;
     height: 100%;
-    background-color: lightgray;
+    background-color: $third-color;
+
+    h1 {
+        margin-top: 6rem;
+    }
 }
 
 .container-pack {
     display: grid;
     grid-gap: 2rem;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 300px;
+    grid-template-rows: 250px;
     width: 80%;
     height: auto;
     margin: 6rem 0;
 }
 
 .card-pack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width:100%;
-    height: 100%;
-    border-radius: 0.2rem;
-    padding: 2rem 0;
+    min-height: 250px;
+    box-shadow: 1px 2px 4px rgba($color: #000000, $alpha: .2);
 }
 
 .card-pack-top {
@@ -30,19 +37,21 @@
     align-items: center;
     height: 25%;
     width: 100%;
-    background-color: #234187;
+    background-color: $first-color;
+    border-radius: .2rem .2rem 0 0;
 
     p {
-        color:white
+        color:$fourth-color
     }
 }
 
 .card-pack-body {
     display: flex;
     align-items: center;
-    height: 75%;
+    height: 100%;
     width: 100%;
-    background-color: white;
+    background-color: $fourth-color;
+    border-radius: 0 0 .2rem .2rem;
     text-align: center;
 }
 
@@ -52,7 +61,11 @@
 
 .container-pack.container-pack--admin {
     grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: 350px;
+    grid-template-rows: 350px;
+
+    .card-pack {
+        min-height: 350px;
+    }
 }
 
 
@@ -62,4 +75,28 @@
     justify-content: space-around;
     align-items: center;
     height: 100%;
+}
+
+@media screen and (max-width: 992px) {
+    .container-pack {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .container-pack.container-pack--admin {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container-pack {
+        grid-template-columns: 1fr;
+    }
+    
+    .container-pack.container-pack--admin {
+        grid-template-columns: 1fr;
+    }
+
+    // .container-admin {
+    //     width: 60%;
+    // }
 }

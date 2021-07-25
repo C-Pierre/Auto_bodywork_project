@@ -15,15 +15,15 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 class UserController extends AbstractController
 {
-    /**
-     * @Route("/", name="user_index", methods={"GET"})
-     */
-    public function index(UserRepository $userRepository): Response
-    {
-        return $this->render('user/index.html.twig', [
-            'users' => $userRepository->findAll(),
-        ]);
-    }
+    // /**
+    //  * @Route("/", name="user_index", methods={"GET"})
+    //  */
+    // public function index(UserRepository $userRepository): Response
+    // {
+    //     return $this->render('user/index.html.twig', [
+    //         'users' => $userRepository->findAll(),
+    //     ]);
+    // }
 
     /**
      * @Route("/new", name="user_new", methods={"GET","POST"})

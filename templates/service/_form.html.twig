@@ -1,4 +1,23 @@
-{{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
-{{ form_end(form) }}
+<div class="form-edit">
+	{{ form_start(form) }}
+	<div class="edit-groupform">
+		{{ form_label(form.name) }}
+		{{ form_errors(form.name) }}
+		{{ form_widget(form.name) }}
+	</div>
+	<div class="edit-groupform">
+		{{ form_label(form.description) }}
+		{{ form_errors(form.description) }}
+		{{ form_widget(form.description) }}
+	</div>
+	<div class="edit-groupform">
+		{{ form_label(form.time) }}
+		{{ form_errors(form.time) }}
+		{{ form_widget(form.time) }}
+	</div>
+	<div class="edit-groupform">
+		<input type="submit" class="msg-btn msg-btn--admin" value="Envoyer"/>
+	</div>
+	{{ form_end(form) }}
+</div>
+

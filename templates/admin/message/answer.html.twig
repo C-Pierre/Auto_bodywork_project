@@ -1,32 +1,34 @@
 {% extends '/admin/layout.html.twig' %}
 
 {% block main %}
-	<h2>Boîte de réception : répondre</h2>
-	<div class="messages-admin">
-		{% if message %}
-			<div class="show-msg-admin">
-				<p>Date : 06/06/2049</p>
-				<p>Contact :
-					{{ message.email }}</p>
-				{% if message.phone != null %}
-					<p>Phone :
-						{{ message.phone }}</p>
-				{% else %}
-					<p>Phone :
-						Auqu'un numéro</p>
-				{% endif %}
-			</div>
-			<div class="one-msg-admin">
-				<div class="top-msg-admin">
-					<p>Nom :
-						{{ message.firstname }}</p>
-					<p>Prénom :
-						{{ message.lastname }}</p>
+	<div class="container-admin">
+		<h2>Boîte de réception : répondre</h2>
+		<div class="messages-admin">
+			{% if message %}
+				<div class="show-msg-admin">
+					<p>Date : 06/06/2049</p>
+					<p>Contact :
+						{{ message.email }}</p>
+					{% if message.phone != null %}
+						<p>Phone :
+							{{ message.phone }}</p>
+					{% else %}
+						<p>Phone :
+													Auqu'un numéro</p>
+					{% endif %}
 				</div>
-				<div class="text-msg-admin text-msg-admin--contact">
-					{% include '/admin/message/_form-answer.html.twig'%}
+				<div class="one-msg-admin">
+					<div class="top-msg-admin">
+						<p>Nom :
+							{{ message.firstname }}</p>
+						<p>Prénom :
+							{{ message.lastname }}</p>
+					</div>
+					<div class="text-msg-admin text-msg-admin--contact">
+						{% include '/admin/message/_form-answer.html.twig'%}
+					</div>
 				</div>
-			</div>
-		{% endif %}
+			{% endif %}
+		</div>
 	</div>
 {% endblock %}

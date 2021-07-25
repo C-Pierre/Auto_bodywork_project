@@ -1,29 +1,25 @@
 {% extends '/admin/layout.html.twig' %}
 
 {% block main %}
-	<h2>Boîte de réception</h2>
-	<div class="messages-admin">
-		{% if messages %}
-			{% for message in pagination %}
-				{% if message.archived == false %}
-					<div class="show-msg-admin">
-						<p>Date : 06/06/2049</p>
-						<p>Contact :
-							{{ message.email }}</p>
-						<p>Statut : à lire</p>
-						<a href="{{ path('admin_message_show', {'id': message.id}) }}" class="msg-btn">Lire</a>
-						<form method="post" action="{{ path('admin_message_delete', {'id': message.id}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
-							<input type="hidden" name="_token" value="{{ csrf_token('delete' ~ message.id) }}">
-							<a href="#" class="msg-btn">Supprimer</a>
-						</form>
-					</div>
-				{% endif %}
-			{% endfor %}
-		<div class="pagination-container">
-			<div class="pagination">
-				{{ knp_pagination_render(pagination, '@KnpPaginator/Pagination/twitter_bootstrap_v4_pagination.html.twig') }}
-			</div>
+	<div class="container-admin">
+		<h2>Boîte de réception</h2>
+		<div class="messages-admin">
+			{% if messages %}
+				{% for message in pagination %}
+					{% if message.archived == false %}
+						<div class="show-msg-admin">
+							<p>Date : 06/06/2049</p>
+							<p>Contact :
+								{{ message.email }}</p>
+							<a href="{{ path('admin_message_show', {'id': message.id}) }}" class="msg-btn">Lire</a>
+							{{ include('message/_form-delete.html.twig') }}
+						</div>
+					{% endif %}
+				{% endfor %}
+				<div class="pagination">
+					{{ knp_pagination_render(pagination) }}
+				</div>
+			{% endif %}
 		</div>
-		{% endif %}
 	</div>
 {% endblock %}

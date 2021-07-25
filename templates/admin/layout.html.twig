@@ -3,34 +3,62 @@
 {% block body %}
 	{% include '_headerAll.html.twig' 	%}
 	<main class="login-main login-main--admin">
-		<nav>
-			<h1>Espace administrateur</h1>
+		<nav class="admin-nav" id="nav">
+			<h1 id="btnMenuClose">Espace administrateur</h1>
 			<ul>
 				<li>
-					<a href="{{ path('admin_message_reception') }}">Messages</a>
+					<a href="{{ path('admin_index') }}">Messages</a>
 				</li>
 				<li>
 					<a href="{{ path('admin_message_archived') }}">Archivés</a>
 				</li>
 				<li>
-					<a href="#">Envoie</a>
+					<a href="{{ path('admin_message_send') }}">Envoyés</a>
 				</li>
 			</ul>
 			<ul>
-				<li><a href="{{ path('admin_pack_all') }}">Forfaits</a></li>
-				<li><a href="{{ path('admin_service') }}">Services</a></li>
+				<li>
+					<a href="{{ path('admin_pack') }}">Forfaits</a>
+				</li>
+				<li>
+					<a href="{{ path('admin_service') }}">Services</a>
+				</li>
 			</ul>
 			<ul>
 				<li><a href="{{ path('admin_password') }}">Mot de passe</a></li>
 				<li><a href="{{ path('app_logout') }}">Déconnexion</a></li>
 			</ul>
 		</nav>
+		<button class="btn-menu btn-menu-active" id="btnMenu"><img src="{{ asset('build/images/icones/menu.svg') }}" alt=""></button>
 		<section class="section-admin">
-			<div class="container-admin">
-				{% block main %}
-				{% endblock %}
-			</div>
+			{% block main %}{% endblock %}
 		</section>
+		<script>
+			const nav = document.getElementById('nav');
+			const btnMenu = document.getElementById('btnMenu');
+			const btnMenuClose = document.getElementById('btnMenuClose');
+
+			window.addEventListener('DOMContentLoaded', () => {
+			function showMenu() {
+			nav.classList.add('nav-active');
+			btnMenu.classList.remove('btn-menu-active');
+			}
+
+			if (btnMenu !== null) {
+			btnMenu.addEventListener('click', showMenu);
+			}
+
+			function hideMenu() {
+			nav.classList.remove('nav-active');
+			btnMenu.classList.add('btn-menu-active');
+			}
+
+			if (btnMenuClose !== null) {
+			btnMenu.addEventListener('click', showMenu);
+			btnMenuClose.addEventListener('click', hideMenu);
+			}
+			});
+		</script>
 	</main>
 	<footer class="footer-login">
 		<div class="footer-all footer-all--login">

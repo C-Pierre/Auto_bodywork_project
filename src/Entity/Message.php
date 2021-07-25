@@ -62,6 +62,11 @@ class Message
      */
     private $message;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $send = false;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -172,6 +177,18 @@ class Message
     public function setMessage(string $message): self
     {
         $this->message = $message;
+
+        return $this;
+    }
+
+    public function getSend(): ?bool
+    {
+        return $this->send;
+    }
+
+    public function setSend(bool $send): self
+    {
+        $this->send = $send;
 
         return $this;
     }

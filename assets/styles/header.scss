@@ -21,7 +21,7 @@
 
 .header-on {
     background-image: none;
-    background-color: white;
+    background-color: $fourth-color;
     clip-path: none;
     box-shadow: 1px 2px 4px rgba(0, 0, 0, .3);
 }
@@ -29,7 +29,7 @@
 .header-on .title-bando{
     top: 0;
     margin: auto 0;
-    color: #234187;
+    color: $first-color;
 }
 
 .menu {
@@ -47,7 +47,7 @@
     position: relative;
     top: .5rem;
     font-size: 2.6rem;
-    color: white;
+    color: $fourth-color;
     text-decoration: none;
     transition: .3s ease;
 }
@@ -58,7 +58,7 @@
     left: 2rem;
     font-size: 1.8rem;
     font-style: italic;
-    color: white;
+    color: $fourth-color;
 }
 
 .date-bando-off {
@@ -66,7 +66,7 @@
 }
 
 .date-bando span {
-    color: #234187;
+    color: $first-color;
     font-style: italic;
     font-weight: bold;
 }
@@ -102,15 +102,15 @@ a {
     justify-content: center;
     width: 100%;
     height: auto;
-    position: absolute;
+    position: fixed;
     bottom: 60px;
+    z-index: 15;
 }
 
 .button {
     height: 70px;
     width: 70px;
     margin: auto;
-    z-index: 15;
     transform: translateY(0);
     transition: transform .7s ease;
 }
@@ -122,7 +122,7 @@ a {
 .button img {
     height: 70px;
     width: 70px;
-    background-color: white;
+    background-color: $fourth-color;
     box-shadow: 2px 4px 8px rgba(0, 0, 0, .6);
     border-radius: 90px;
 }
@@ -174,7 +174,7 @@ a {
 .header-all {
     display: inline-flex;
     justify-content: center;
-    position: absolute;
+    position: fixed;
     top: 0;
     height: 70px;
     width: 100%;

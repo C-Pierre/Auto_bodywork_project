@@ -3,10 +3,8 @@
 namespace App\Form;
 
 use App\Entity\Message;
-use Doctrine\DBAL\Types\BooleanType;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-use Symfony\Component\Form\Extension\Core\Type\IntegerType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\FormTypeInterface;
@@ -39,9 +37,9 @@ class ContactType extends AbstractType
                     ]),
                 ],
             ])
-            ->add('phone', IntegerType::class)
+            ->add('phone', TextType::class)
             ->add('email', TextType::class)
-            ->add('message', TextType::class, [
+            ->add('message', TextareaType::class, [
                 'constraints' => [
                     new NotBlank([
                         'message' => 'Entrez votre message',

@@ -15,13 +15,13 @@ class UserFixtures extends Fixture
         [
             'username' => 'MySuperAdmin',
             'roles' => ['ROLE_SUPER_ADMIN'],
-            'password' => 'jesuisbientoutvabien'
+            'password' => 'myadmin'
         ],
 
         [
             'username' => 'MyAdmin',
             'roles' => ['ROLE_ADMIN'],
-            'password' => 'ilfautmangerdespommes'
+            'password' => 'myadmin'
         ],
     ];
 

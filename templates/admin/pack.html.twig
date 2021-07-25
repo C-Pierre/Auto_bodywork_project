@@ -10,8 +10,8 @@
 					</div>
 					<div class="card-pack-body card-pack-body--admin">
 						<p>{{ pack.description }}</p>
-						<a href="{{ path('pack_delete', {'id': pack.id}) }}" class="msg-btn">Supprimer</a>
-						<a href="{{ path('pack_edit', {'id': pack.id}) }}" class="msg-btn">Modifier</a>
+						<a href="{{ path('admin_pack_delete', {'id': pack.id}) }}" class="msg-btn">Supprimer</a>
+						<a href="{{ path('admin_pack_edit', {'id': pack.id}) }}" class="msg-btn">Modifier</a>
 					</div>
 				</div>
 			{% endfor %}
@@ -20,7 +20,7 @@
 					<p>Créer des forfaits</p>
 				</div>
 				<div class="card-pack-body card-pack-body--admin">
-					<a href="{{ path('pack_new') }}" class="msg-btn">Nouveau</a>
+					<a href="{{ path('admin_pack_new') }}" class="msg-btn">Nouveau</a>
 				</div>
 			</div>
 		</div>
